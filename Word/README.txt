@@ -1,4 +1,5 @@
 # Mongolian Word Game / Монгол үгийн тоглоом
+Winning
 
 A simple, responsive HTML game to learn Mongolian (Cyrillic) words for common objects.
 
