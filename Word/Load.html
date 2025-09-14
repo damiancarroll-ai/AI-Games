@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mongolian Word Game / Монгол үгийн тоглоом</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1 class="title">Mongolian Word Game / Монгол үгийн тоглоом</h1>
+      <p class="subtitle">Vocab &middot; Choose a sub‑category</p>
+    </header>
+
+    <!-- Home -->
+    <main id="screen-home" class="screen active">
+      <div class="card">
+        <h2>Vocab</h2>
+        <div class="grid grid-2">
+          <button class="btn category-btn" data-category="inside">Inside Objects</button>
+          <button class="btn category-btn" data-category="outside">Outside objects</button>
+          <button class="btn category-btn" data-category="shopping">Shopping (Food items)</button>
+          <button class="btn category-btn" data-category="body">Body parts</button>
+        </div>
+      </div>
+      <div class="card note">
+        <p>Tip: Everything resizes for phones and computers. Default text is large and easy to read.</p>
+      </div>
+    </main>
+
+    <!-- Difficulty -->
+    <main id="screen-difficulty" class="screen">
+      <div class="card">
+        <h2 id="chosen-category-label">Choose difficulty</h2>
+        <div class="grid grid-2">
+          <button class="btn diff-btn" data-diff="simple">Simple</button>
+          <button class="btn diff-btn" data-diff="medium">Medium</button>
+          <button class="btn diff-btn" data-diff="hard">Hard</button>
+          <button class="btn diff-btn secondary" data-diff="random">Random mix</button>
+        </div>
+        <div class="actions">
+          <button class="btn outline" id="back-to-home-1">← Back</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Game -->
+    <main id="screen-game" class="screen">
+      <div class="card">
+        <div class="status">
+          <div><strong>Category:</strong> <span id="status-category">—</span></div>
+          <div><strong>Difficulty:</strong> <span id="status-difficulty">—</span></div>
+          <div><strong>Progress:</strong> <span id="status-progress">0/20</span></div>
+          <div><strong>Score:</strong> <span id="status-score">0</span></div>
+        </div>
+
+        <div class="prompt">
+          <div class="mn" id="prompt-mn">—</div>
+          <div class="phonetic" id="prompt-phonetic">—</div>
+        </div>
+
+        <div id="options" class="grid grid-2"></div>
+        <div id="feedback" class="feedback"></div>
+
+        <div class="actions">
+          <button class="btn outline" id="quit-to-difficulty">← Quit</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Result -->
+    <main id="screen-result" class="screen">
+      <div class="card">
+        <h2>Round complete!</h2>
+        <p>You scored <strong><span id="final-score">0</span>/20</strong> (first-try correct).</p>
+        <div class="grid grid-2">
+          <button class="btn" id="play-again-same">Play again (same settings)</button>
+          <button class="btn" id="choose-diff">Choose Simple / Medium / Hard</button>
+          <button class="btn" id="choose-category">Choose another category</button>
+          <button class="btn outline" id="go-home">Home</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2025 Simple static HTML game for Australian learners of Mongolian (Cyrillic).</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
