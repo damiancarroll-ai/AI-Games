@@ -1,0 +1,122 @@
+
+:root {
+  --bg: #e6f2ff;     /* light blue */
+  --text: #0a2a5a;   /* dark blue */
+  --accent: #0a66c2; /* buttons */
+  --white: #ffffff;
+  --muted: #dbeafe;
+}
+
+/* Base typography: default at least 20pt */
+html { font-size: 20pt; }
+@media (max-width: 640px) {
+  html { font-size: 18pt; }
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.35;
+}
+
+#app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header, footer { text-align: center; }
+
+.title {
+  font-size: 40pt;  /* Title at least 40pt */
+  margin: 0.5rem 0 0.2rem;
+}
+
+.subtitle { margin: 0 0 1rem; }
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+.card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 1rem;
+}
+
+.note { background: var(--muted); }
+
+.grid {
+  display: grid;
+  gap: 0.75rem;
+}
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 640px) {
+  .grid-2 { grid-template-columns: 1fr; }
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+}
+.btn:hover { filter: brightness(1.05); }
+.btn:active { transform: translateY(1px); }
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn.secondary { background: #145ea8; }
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 640px) {
+  .status { grid-template-columns: 1fr; }
+}
+
+.prompt {
+  text-align: center;
+  margin: 0.5rem 0 0.75rem;
+}
+.mn {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.phonetic {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+
+.feedback {
+  min-height: 1.4rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 800;
+}
+.feedback.ok { color: #0d9488; }
+.feedback.no { color: #b91c1c; }
+
+.actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
